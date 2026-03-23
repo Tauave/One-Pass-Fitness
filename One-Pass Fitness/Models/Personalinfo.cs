@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace One_Pass_Fitness.Models
 {
-    public class Personalinformation
+    public class Personalinfo
     {
         public int Personid { get; set; }
         public string Name { get; set; }
