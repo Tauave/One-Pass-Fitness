@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 
 namespace One_Pass_Fitness.Models
 {
+    
+        
     public class BookingClasses
     {
         public int Bookingid { get; set; }

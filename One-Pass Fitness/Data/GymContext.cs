@@ -17,5 +17,17 @@ namespace One_Pass_Fitness.Data
         public DbSet <Trainers> Trainers { get; set; }
         public DbSet <Personalinfo> Personalinfo { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Admin>().ToTable("Admin");
+            modelBuilder.Entity<BookingClasses>().ToTable("BookingClasses");
+            modelBuilder.Entity<Classes>().ToTable("Classes");
+            modelBuilder.Entity<Member>().ToTable("Members");
+            modelBuilder.Entity<MembershipInfo>().ToTable("Memberships");
+            modelBuilder.Entity<Trainers>().ToTable("Trainers");
+            modelBuilder.Entity<Personalinfo>().ToTable("Personalinfo");
+
+        }
+
     }
 }
