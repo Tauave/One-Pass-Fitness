@@ -5,7 +5,7 @@ namespace One_Pass_Fitness.Models
 {
     public class Trainers
     {
-        public int Trainerid { get; set; }
+        public int Trainersid { get; set; }
         public int Personid { get; set; }  
 
         public string Trainedfield { get; set; }

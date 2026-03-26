@@ -6,7 +6,7 @@ namespace One_Pass_Fitness.Models
 {
     public class Personalinfo
     {
-        public int Personid { get; set; }
+        public int Personalinfoid { get; set; }
         public string Name { get; set; }
         [Required]
         [StringLength(100)]

@@ -5,7 +5,7 @@ namespace One_Pass_Fitness.Models
 {
     public class Classes
     {
-        public int Classid { get; set; }
+        public int ClassesId { get; set; }
         public string Classname { get; set; }
         public DateOnly Date { get; set; }
         public TimeOnly Starttime { get; set; }

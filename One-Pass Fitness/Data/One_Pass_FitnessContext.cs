@@ -1,13 +1,15 @@
 ﻿using One_Pass_Fitness.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 
 namespace One_Pass_Fitness.Data
 {
-    public class GymContext : DbContext
+    public class One_Pass_Fitness : DbContext
     {
-        public GymContext(DbContextOptions<GymContext> options) : base(options)
-        { 
+        public One_Pass_Fitness(DbContextOptions<One_Pass_Fitness> options) : base(options)
+        {
         }
+
 
         public DbSet<Admin> Admin { get; set; }
         public DbSet<BookingClasses> BookingClasses { get; set; }
