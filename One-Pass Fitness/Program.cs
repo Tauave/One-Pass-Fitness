@@ -5,13 +5,19 @@ using One_Pass_Fitness.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<One_Pass_Fitness.Data.One_Pass_Fitness>(options =>
+builder.Services.AddDbContext<OnePassFitnessContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddControllersWithViews();
 
 
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<OnePassFitnessContext>();
+    db.Database.Migrate();
+    DbInitializer.Initialize(db);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

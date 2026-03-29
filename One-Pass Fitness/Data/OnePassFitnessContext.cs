@@ -1,12 +1,11 @@
 ﻿using One_Pass_Fitness.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
 
 namespace One_Pass_Fitness.Data
 {
-    public class One_Pass_Fitness : DbContext
+    public class OnePassFitnessContext : DbContext
     {
-        public One_Pass_Fitness(DbContextOptions<One_Pass_Fitness> options) : base(options)
+        public OnePassFitnessContext(DbContextOptions<OnePassFitnessContext> options) : base(options)
         {
         }
 
@@ -14,10 +13,10 @@ namespace One_Pass_Fitness.Data
         public DbSet<Admin> Admin { get; set; }
         public DbSet<BookingClasses> BookingClasses { get; set; }
         public DbSet<Classes> Classes { get; set; }
-        public DbSet <Member> Members { get; set; }
-        public DbSet <MembershipInfo> Memberships { get; set; }
-        public DbSet <Trainers> Trainers { get; set; }
-        public DbSet <Personalinfo> Personalinfo { get; set; }
+        public DbSet<Member> Members { get; set; }
+        public DbSet<MembershipInfo> Memberships { get; set; }
+        public DbSet<Trainers> Trainers { get; set; }
+        public DbSet<Personalinfo> Personalinfo { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
