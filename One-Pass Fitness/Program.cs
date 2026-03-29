@@ -14,9 +14,8 @@ builder.Services.AddControllersWithViews();
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
-    var db = scope.ServiceProvider.GetRequiredService<OnePassFitnessContext>();
-    db.Database.Migrate();
-    DbInitializer.Initialize(db);
+    var context = scope.ServiceProvider.GetRequiredService<OnePassFitnessContext>();
+    DbInitializer.Initialize(context);
 }
 
 // Configure the HTTP request pipeline.
