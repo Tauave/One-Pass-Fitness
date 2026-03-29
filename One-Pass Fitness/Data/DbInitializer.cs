@@ -7,11 +7,11 @@ namespace One_Pass_Fitness.Data
 {
     public class DbInitializer
     {
-        public static void Initialize(One_Pass_FitnessContext context)
+        public static void Initialize(One_Pass_Fitness context)
         {
             context.Database.EnsureCreated();
             // Look for any members.
-            if (context.Member.Any())
+            if (context.Members.Any())
             {
                 return;   // DB has been seeded
             }

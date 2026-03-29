@@ -5,7 +5,7 @@ using One_Pass_Fitness.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<One_Pass_FitnessContext>(options =>
+builder.Services.AddDbContext<One_Pass_Fitness.Data.One_Pass_Fitness>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddControllersWithViews();
