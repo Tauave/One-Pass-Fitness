@@ -12,7 +12,7 @@ namespace One_Pass_Fitness.Models
         public int Memberid { get; set; }
         public int Classid { get; set; }
         public DateOnly Bookingdate { get; set; }
-        public string Attendancestatus { get; set; }
+        public string? Attendancestatus { get; set; }
 
     }
 }

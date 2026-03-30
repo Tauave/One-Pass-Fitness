@@ -11,7 +11,7 @@ namespace One_Pass_Fitness.Models
         public TimeOnly Starttime { get; set; }
         public TimeOnly Endtime { get; set; }
         public int Trainerid { get; set; }
-        public string Availability { get; set; }
+        public string? Availability { get; set; }
 
     }
 }
