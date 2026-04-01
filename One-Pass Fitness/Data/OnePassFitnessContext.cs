@@ -10,7 +10,7 @@ namespace One_Pass_Fitness.Data
         }
 
 
-        public DbSet<Admin> Admin { get; set; }
+        public DbSet<Manager> Manager { get; set; }
         public DbSet<BookingClasses> BookingClasses { get; set; }
         public DbSet<Classes> Classes { get; set; }
         public DbSet<Member> Members { get; set; }
@@ -20,7 +20,7 @@ namespace One_Pass_Fitness.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Admin>().ToTable("Admin");
+            modelBuilder.Entity<Manager>().ToTable("Manager");
             modelBuilder.Entity<BookingClasses>().ToTable("BookingClasses");
             modelBuilder.Entity<Classes>().ToTable("Classes");
             modelBuilder.Entity<Member>().ToTable("Members");

@@ -151,18 +151,15 @@ namespace One_Pass_Fitness.Data
             }
             context.SaveChanges();
 
-            var admin = new Admin[]
+            var manager = new Manager[]
             {
-                new Admin { Personid = personalinfos[0].Personalinfoid },
-                new Admin { Personid = personalinfos[1].Personalinfoid },
-                new Admin { Personid = personalinfos[2].Personalinfoid },
-                new Admin { Personid = personalinfos[3].Personalinfoid },
-                new Admin { Personid = personalinfos[4].Personalinfoid }
+                new Manager { Personid = personalinfos[0].Personalinfoid },
+
             };
 
-            foreach (Admin a in admin)
+            foreach (Manager a in manager)
             {
-                context.Admin.Add(a);
+                context.Manager.Add(a);
             }
             context.SaveChanges();
 
@@ -191,8 +188,8 @@ namespace One_Pass_Fitness.Data
                 new MembershipInfo { Memberid = members[20].Memberid, Startdate = DateOnly.Parse("2024-09-01"), Enddate = DateOnly.Parse("2025-09-01"), Price = 49.99m },
                 new MembershipInfo { Memberid = members[21].Memberid, Startdate = DateOnly.Parse("2024-10-01"), Enddate = DateOnly.Parse("2025-10-01"), Price = 49.99m },
                 new MembershipInfo { Memberid = members[22].Memberid, Startdate = DateOnly.Parse("2024-11-01"), Enddate = DateOnly.Parse("2025-11-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[23].Memberid, Startdate = DateOnly.Parse("2024-12-01"), Enddate = DateOnly.Parse("2025-12-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[24].Memberid, Startdate = DateOnly.Parse("2025-01-01"), Enddate = DateOnly.Parse("2026-01-01"), Price = 49.99m }
+                new MembershipInfo { Memberid = members[23].Memberid, Startdate = DateOnly.Parse("2024-12-01"), Enddate = DateOnly.Parse("01-12-2025"), Price = 49.99m },
+                new MembershipInfo { Memberid = members[24].Memberid, Startdate = DateOnly.Parse("2025-01-01"), Enddate = DateOnly.Parse("01-01-2026"), Price = 49.99m }
             };
 
             foreach (MembershipInfo mi in membershipinfo)
