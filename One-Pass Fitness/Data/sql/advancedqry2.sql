@@ -1,5 +1,3 @@
-SELECT p.Name, p.Lastname, COUNT(c.ClassesId) AS TotalClasses
+SELECT t.Trainersid, p.Name, p.Lastname, t.Trainedfield, t.Datehired
 FROM Trainers t
-JOIN Personalinfo p ON t.Personid = p.Personid
-LEFT JOIN Classes c ON t.Trainersid = c.Trainerid
-GROUP BY p.Name, p.Lastname;
+JOIN Personalinfo p ON t.Personid = p.Personid; 

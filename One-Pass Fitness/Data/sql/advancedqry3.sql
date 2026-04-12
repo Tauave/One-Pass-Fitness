@@ -1,4 +1,5 @@
-SELECT c.Classname, COUNT(b.BookingClassesId) AS TotalBookings
+SELECT c.ClassesId, c.Classname, c.Date, c.Starttime, c.Endtime,
+       p.Name, p.Lastname
 FROM Classes c
-LEFT JOIN BookingClasses b ON c.ClassesId = b.Classid
-GROUP BY c.Classname;
+JOIN Trainers t ON c.Trainerid = t.Trainersid
+JOIN Personalinfo p ON t.Personid = p.Personid;
