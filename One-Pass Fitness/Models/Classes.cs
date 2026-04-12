@@ -13,5 +13,7 @@ namespace One_Pass_Fitness.Models
         public int Trainerid { get; set; }
         public string? Availability { get; set; }
 
+        public Trainers Trainer { get; set; } = null!;
+        public ICollection<BookingClasses> Bookings { get; set; } = new List<BookingClasses>();
     }
 }

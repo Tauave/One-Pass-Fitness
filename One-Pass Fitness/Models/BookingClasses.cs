@@ -1,11 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-
-namespace One_Pass_Fitness.Models
+﻿namespace One_Pass_Fitness.Models
 {
-    
-        
     public class BookingClasses
     {
         public int BookingClassesId { get; set; }
@@ -14,5 +8,7 @@ namespace One_Pass_Fitness.Models
         public DateOnly Bookingdate { get; set; }
         public string? Attendancestatus { get; set; }
 
+        public Member Member { get; set; } = null!;
+        public Classes Class { get; set; } = null!;
     }
 }

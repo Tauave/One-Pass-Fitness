@@ -11,5 +11,8 @@ namespace One_Pass_Fitness.Models
         public string Trainedfield { get; set; }
 
         public DateOnly Datehired { get; set; }
+
+        public Personalinfo Person { get; set; } = null!;
+        public ICollection<Classes> Classes { get; set; } = new List<Classes>();
     }
 }

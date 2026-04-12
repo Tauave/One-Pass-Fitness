@@ -7,6 +7,6 @@ namespace One_Pass_Fitness.Models
         public int Managerid { get; set; }
         public int Personid { get; set; }
 
-
+        public Personalinfo Person { get; set; } = null!;
     }
 }

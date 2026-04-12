@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace One_Pass_Fitness.Models
 {
@@ -10,5 +9,8 @@ namespace One_Pass_Fitness.Models
         public DateOnly Datejoined { get; set; }
 
         public string? Status { get; set; }
+
+        public Personalinfo Person { get; set; } = null!;
+        public ICollection<Membership> Memberships { get; set; } = new List<Membership>();
     }
 }

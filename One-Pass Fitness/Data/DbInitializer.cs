@@ -163,39 +163,51 @@ namespace One_Pass_Fitness.Data
             }
             context.SaveChanges();
 
-            var membershipinfo = new MembershipInfo[]
+            var membershipRows = new Membership[]
             {
-                new MembershipInfo { Memberid = members[0].Memberid, Startdate = DateOnly.Parse("2023-01-01"), Enddate = DateOnly.Parse("2024-01-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[1].Memberid, Startdate = DateOnly.Parse("2023-02-01"), Enddate = DateOnly.Parse("2024-02-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[2].Memberid, Startdate = DateOnly.Parse("2023-03-01"), Enddate = DateOnly.Parse("2024-03-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[3].Memberid, Startdate = DateOnly.Parse("2023-04-01"), Enddate = DateOnly.Parse("2024-04-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[4].Memberid, Startdate = DateOnly.Parse("2023-05-01"), Enddate = DateOnly.Parse("2024-05-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[5].Memberid, Startdate = DateOnly.Parse("2023-06-01"), Enddate = DateOnly.Parse("2024-06-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[6].Memberid, Startdate = DateOnly.Parse("2023-07-01"), Enddate = DateOnly.Parse("2024-07-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[7].Memberid, Startdate = DateOnly.Parse("2023-08-01"), Enddate = DateOnly.Parse("2024-08-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[8].Memberid, Startdate = DateOnly.Parse("2023-09-01"), Enddate = DateOnly.Parse("2024-09-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[9].Memberid, Startdate = DateOnly.Parse("2023-10-01"), Enddate = DateOnly.Parse("2024-10-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[10].Memberid, Startdate = DateOnly.Parse("2023-11-01"), Enddate = DateOnly.Parse("2024-11-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[11].Memberid, Startdate = DateOnly.Parse("2023-12-01"), Enddate = DateOnly.Parse("2024-12-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[12].Memberid, Startdate = DateOnly.Parse("2024-01-01"), Enddate = DateOnly.Parse("2025-01-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[13].Memberid, Startdate = DateOnly.Parse("2024-02-01"), Enddate = DateOnly.Parse("2025-02-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[14].Memberid, Startdate = DateOnly.Parse("2024-03-01"), Enddate = DateOnly.Parse("2025-03-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[15].Memberid, Startdate = DateOnly.Parse("2024-04-01"), Enddate = DateOnly.Parse("2025-04-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[16].Memberid, Startdate = DateOnly.Parse("2024-05-01"), Enddate = DateOnly.Parse("2025-05-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[17].Memberid, Startdate = DateOnly.Parse("2024-06-01"), Enddate = DateOnly.Parse("2025-06-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[18].Memberid, Startdate = DateOnly.Parse("2024-07-01"), Enddate = DateOnly.Parse("2025-07-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[19].Memberid, Startdate = DateOnly.Parse("2024-08-01"), Enddate = DateOnly.Parse("2025-08-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[20].Memberid, Startdate = DateOnly.Parse("2024-09-01"), Enddate = DateOnly.Parse("2025-09-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[21].Memberid, Startdate = DateOnly.Parse("2024-10-01"), Enddate = DateOnly.Parse("2025-10-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[22].Memberid, Startdate = DateOnly.Parse("2024-11-01"), Enddate = DateOnly.Parse("2025-11-01"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[23].Memberid, Startdate = DateOnly.Parse("2024-12-01"), Enddate = DateOnly.Parse("01-12-2025"), Price = 49.99m },
-                new MembershipInfo { Memberid = members[24].Memberid, Startdate = DateOnly.Parse("2025-01-01"), Enddate = DateOnly.Parse("01-01-2026"), Price = 49.99m }
+                new Membership { Memberid = members[0].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2023-01-01"), Enddate = DateOnly.Parse("2024-01-01"), Price = 49.99m },
+                new Membership { Memberid = members[1].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2023-02-01"), Enddate = DateOnly.Parse("2024-02-01"), Price = 49.99m },
+                new Membership { Memberid = members[2].Memberid, MembershipType = "Monthly", Startdate = DateOnly.Parse("2023-03-01"), Enddate = DateOnly.Parse("2024-03-01"), Price = 49.99m },
+                new Membership { Memberid = members[3].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2023-04-01"), Enddate = DateOnly.Parse("2024-04-01"), Price = 49.99m },
+                new Membership { Memberid = members[4].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2023-05-01"), Enddate = DateOnly.Parse("2024-05-01"), Price = 49.99m },
+                new Membership { Memberid = members[5].Memberid, MembershipType = "Monthly", Startdate = DateOnly.Parse("2023-06-01"), Enddate = DateOnly.Parse("2024-06-01"), Price = 49.99m },
+                new Membership { Memberid = members[6].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2023-07-01"), Enddate = DateOnly.Parse("2024-07-01"), Price = 49.99m },
+                new Membership { Memberid = members[7].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2023-08-01"), Enddate = DateOnly.Parse("2024-08-01"), Price = 49.99m },
+                new Membership { Memberid = members[8].Memberid, MembershipType = "Monthly", Startdate = DateOnly.Parse("2023-09-01"), Enddate = DateOnly.Parse("2024-09-01"), Price = 49.99m },
+                new Membership { Memberid = members[9].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2023-10-01"), Enddate = DateOnly.Parse("2024-10-01"), Price = 49.99m },
+                new Membership { Memberid = members[10].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2023-11-01"), Enddate = DateOnly.Parse("2024-11-01"), Price = 49.99m },
+                new Membership { Memberid = members[11].Memberid, MembershipType = "Monthly", Startdate = DateOnly.Parse("2023-12-01"), Enddate = DateOnly.Parse("2024-12-01"), Price = 49.99m },
+                new Membership { Memberid = members[12].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2024-01-01"), Enddate = DateOnly.Parse("2025-01-01"), Price = 49.99m },
+                new Membership { Memberid = members[13].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2024-02-01"), Enddate = DateOnly.Parse("2025-02-01"), Price = 49.99m },
+                new Membership { Memberid = members[14].Memberid, MembershipType = "Monthly", Startdate = DateOnly.Parse("2024-03-01"), Enddate = DateOnly.Parse("2025-03-01"), Price = 49.99m },
+                new Membership { Memberid = members[15].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2024-04-01"), Enddate = DateOnly.Parse("2025-04-01"), Price = 49.99m },
+                new Membership { Memberid = members[16].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2024-05-01"), Enddate = DateOnly.Parse("2025-05-01"), Price = 49.99m },
+                new Membership { Memberid = members[17].Memberid, MembershipType = "Monthly", Startdate = DateOnly.Parse("2024-06-01"), Enddate = DateOnly.Parse("2025-06-01"), Price = 49.99m },
+                new Membership { Memberid = members[18].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2024-07-01"), Enddate = DateOnly.Parse("2025-07-01"), Price = 49.99m },
+                new Membership { Memberid = members[19].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2024-08-01"), Enddate = DateOnly.Parse("2025-08-01"), Price = 49.99m },
+                new Membership { Memberid = members[20].Memberid, MembershipType = "Monthly", Startdate = DateOnly.Parse("2024-09-01"), Enddate = DateOnly.Parse("2025-09-01"), Price = 49.99m },
+                new Membership { Memberid = members[21].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2024-10-01"), Enddate = DateOnly.Parse("2025-10-01"), Price = 49.99m },
+                new Membership { Memberid = members[22].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2024-11-01"), Enddate = DateOnly.Parse("2025-11-01"), Price = 49.99m },
+                new Membership { Memberid = members[23].Memberid, MembershipType = "Monthly", Startdate = DateOnly.Parse("2024-12-01"), Enddate = DateOnly.Parse("2025-12-01"), Price = 49.99m },
+                new Membership { Memberid = members[24].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2025-01-01"), Enddate = DateOnly.Parse("2026-01-01"), Price = 49.99m }
             };
 
-            foreach (MembershipInfo mi in membershipinfo)
+            foreach (Membership mi in membershipRows)
             {
                 context.Memberships.Add(mi);
             }
+
+            context.SaveChanges();
+
+            // Example: renewals / history — second row for first member
+            context.Memberships.Add(new Membership
+            {
+                Memberid = members[0].Memberid,
+                MembershipType = "Monthly",
+                Startdate = DateOnly.Parse("2024-01-01"),
+                Enddate = DateOnly.Parse("2024-02-01"),
+                Price = 19.99m
+            });
             context.SaveChanges();
         }
     }
