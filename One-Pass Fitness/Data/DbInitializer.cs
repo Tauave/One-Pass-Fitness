@@ -165,8 +165,8 @@ namespace One_Pass_Fitness.Data
 
             var membershipRows = new Membership[]
             {
-                new Membership { Memberid = members[0].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2023-01-01"), Enddate = DateOnly.Parse("2024-01-01"), Price = 49.99m },
-                new Membership { Memberid = members[1].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2023-02-01"), Enddate = DateOnly.Parse("2024-02-01"), Price = 49.99m },
+                new Membership { Memberid = members[0].Memberid, MembershipType = "Monthly", Startdate = DateOnly.Parse("2023-01-01"), Enddate = DateOnly.Parse("2023-02-01"), Price = 49.99m },
+                new Membership { Memberid = members[1].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2023-02-01"), Enddate = DateOnly.Parse("2024-02-01"), Price = 600m },
                 new Membership { Memberid = members[2].Memberid, MembershipType = "Monthly", Startdate = DateOnly.Parse("2023-03-01"), Enddate = DateOnly.Parse("2024-03-01"), Price = 49.99m },
                 new Membership { Memberid = members[3].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2023-04-01"), Enddate = DateOnly.Parse("2024-04-01"), Price = 49.99m },
                 new Membership { Memberid = members[4].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2023-05-01"), Enddate = DateOnly.Parse("2024-05-01"), Price = 49.99m },

@@ -3,21 +3,25 @@ using System.ComponentModel.DataAnnotations;
 
 namespace One_Pass_Fitness.Models
 {
-    /// <summary>
-    /// Supertype for people in the system (members, trainers, managers share Personid FKs).
-    /// </summary>
+
     public class Personalinfo
     {
         public int Personalinfoid { get; set; }
+
+        [Required]
+        [StringLength(100)]
         public string Name { get; set; }
+
         [Required]
         [StringLength(100)]
         public string Lastname { get; set; }
+
         [Required]
         [StringLength (100)]
-
         public DateOnly DOB { get; set; }
+
         [Required]
+        [EmailAddress]
         public string Email { get; set; }
         [Required]
         [StringLength(100)]

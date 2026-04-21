@@ -1,8 +1,6 @@
 namespace One_Pass_Fitness.Models
 {
-    /// <summary>
-    /// A priced membership period for a member (separate from the Member subtype row).
-    /// </summary>
+
     public class Membership
     {
         public int Membershipid { get; set; }
