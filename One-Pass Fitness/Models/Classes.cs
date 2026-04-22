@@ -11,8 +11,7 @@ namespace One_Pass_Fitness.Models
         [Required]
         [StringLength(100)]
         public string Classname { get; set; }
-        [Required]
-        [Date
+        
         public DateOnly Date { get; set; }
         public TimeOnly Starttime { get; set; }
         public TimeOnly Endtime { get; set; }

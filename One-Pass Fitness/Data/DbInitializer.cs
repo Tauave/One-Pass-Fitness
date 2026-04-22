@@ -9,7 +9,7 @@ namespace One_Pass_Fitness.Data
     {
         public static void Initialize(OnePassFitnessContext context)
         {
-            context.Database.Migrate();
+            context.Database.EnsureCreated();
 
             if (context.Members.Any())
             {
