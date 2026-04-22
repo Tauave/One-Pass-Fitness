@@ -9,22 +9,24 @@ namespace One_Pass_Fitness.Models
         public int Personalinfoid { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(30)]
         public string Name { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(30)]
         public string Lastname { get; set; }
 
         [Required]
-        [StringLength (100)]
+        [StringLength (10)]
         public DateOnly DOB { get; set; }
 
         [Required]
         [EmailAddress]
+        [StringLength (1000)]
         public string Email { get; set; }
         [Required]
-        [StringLength(100)]
+        [Phone]
+        [StringLength(70)]
         public string Phone { get; set; }
 
         public ICollection<Member> Members { get; set; } = new List<Member>();
