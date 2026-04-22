@@ -5,6 +5,7 @@
         public int BookingClassesId { get; set; }
         public int Memberid { get; set; }
         public int Classid { get; set; }
+       
         public DateOnly Bookingdate { get; set; }
         public string? Attendancestatus { get; set; }
 

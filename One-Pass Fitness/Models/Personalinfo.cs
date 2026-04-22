@@ -8,25 +8,30 @@ namespace One_Pass_Fitness.Models
     {
         public int Personalinfoid { get; set; }
 
-        [Required]
+        [DataType(DataType.Text)]
         [StringLength(30)]
+        [Required(ErrorMessage = "Please enter your name")]
         public string Name { get; set; }
 
-        [Required]
+        [DataType(DataType.Text)]
         [StringLength(30)]
+        [Required(ErrorMessage = "Please enter your lastname")]
         public string Lastname { get; set; }
 
-        [Required]
+        [DataType(DataType.Date)]
         [StringLength (10)]
+        [Required(ErrorMessage = "Please enter your date of birth")]
         public DateOnly DOB { get; set; }
 
-        [Required]
-        [EmailAddress]
+        [DataType (DataType.EmailAddress)]
         [StringLength (1000)]
+        [Required(ErrorMessage = "Please enter your email")]
         public string Email { get; set; }
-        [Required]
-        [Phone]
+
+
+        [DataType (DataType.PhoneNumber)]
         [StringLength(70)]
+        [Required(ErrorMessage = "Please enter your phonenumber")]
         public string Phone { get; set; }
 
         public ICollection<Member> Members { get; set; } = new List<Member>();

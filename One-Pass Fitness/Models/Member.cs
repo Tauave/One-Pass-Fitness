@@ -6,6 +6,7 @@ namespace One_Pass_Fitness.Models
     {
         public int Memberid { get; set; }
         public int Personid { get; set; }
+        
         public DateOnly Datejoined { get; set; }
 
         public string? Status { get; set; }
