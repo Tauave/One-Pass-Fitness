@@ -23,7 +23,6 @@ namespace One_Pass_Fitness.Models
         public string Lastname { get; set; }
 
         //A date of birth is required and should be in the format of a date. The error message "Please enter your date of birth" will be displayed if the validation fails.
-        [DataType(DataType.Date)]
         [Required(ErrorMessage = "Please enter your date of birth")]
         public DateOnly DOB { get; set; }
 

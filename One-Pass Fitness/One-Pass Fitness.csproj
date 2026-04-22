@@ -23,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\SQL\CrudOperations\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 

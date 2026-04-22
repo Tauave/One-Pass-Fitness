@@ -1,2 +1,0 @@
-Select Name
-from Personalinfo
