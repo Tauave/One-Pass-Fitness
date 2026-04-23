@@ -9,12 +9,10 @@ namespace One_Pass_Fitness.Data
         {
         }
 
-        public DbSet<Manager> Manager { get; set; }
-        public DbSet<BookingClasses> BookingClasses { get; set; }
+        public DbSet <Users> Users { get; set; }
+        public DbSet<Roles> Roles { get; set; }
         public DbSet<Classes> Classes { get; set; }
-        public DbSet<Member> Members { get; set; }
         public DbSet<Membership> Memberships { get; set; }
-        public DbSet<Trainers> Trainers { get; set; }
         public DbSet<Personalinfo> Personalinfo { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -24,11 +22,11 @@ namespace One_Pass_Fitness.Data
                 e.ToTable("Personalinfo");
             });
 
-            modelBuilder.Entity<Member>(e =>
+            modelBuilder.Entity<Roles>(e =>
             {
                 e.ToTable("Members");
-                e.HasOne(m => m.Person)
-                    .WithMany(p => p.Members)
+                e.HasOne(m => m.Role)
+                    .WithMany(p => p.Roles)
                     .HasForeignKey(m => m.Personid)
                     .OnDelete(DeleteBehavior.Restrict);
             });
