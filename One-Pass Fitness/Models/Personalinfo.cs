@@ -20,7 +20,7 @@ namespace One_Pass_Fitness.Models
         [DataType(DataType.Text)]
         [StringLength(30), MinLength(3)]
         [Required(ErrorMessage = "Please enter your lastname")]
-        public string Lastname { get; set; }
+        public string Lastname { get; set; } 
 
         //A date of birth is required and should be in the format of a date. The error message "Please enter your date of birth" will be displayed if the validation fails.
         [Required(ErrorMessage = "Please enter your date of birth")]
@@ -42,8 +42,6 @@ namespace One_Pass_Fitness.Models
         [Required(ErrorMessage = "Please enter your phonenumber")]
         public string Phone { get; set; }
 
-        public ICollection<Member> Members { get; set; } = new List<Member>();
-        public ICollection<Trainers> Trainers { get; set; } = new List<Trainers>();
-        public ICollection<Manager> Managers { get; set; } = new List<Manager>();
+       
     }
 }
