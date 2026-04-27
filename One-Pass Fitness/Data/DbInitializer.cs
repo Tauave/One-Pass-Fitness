@@ -51,55 +51,7 @@ namespace One_Pass_Fitness.Data
             }
             context.SaveChanges();
 
-            var members = new Member[]
-            {
-                new Member { Personid = personalinfos[0].Personalinfoid, Datejoined = DateOnly.Parse("2023-01-01"), Status = "Active" },
-                new Member { Personid = personalinfos[1].Personalinfoid, Datejoined = DateOnly.Parse("2023-02-01"), Status = "Active" },
-                new Member { Personid = personalinfos[2].Personalinfoid, Datejoined = DateOnly.Parse("2023-03-01"), Status = "Inactive" },
-                new Member { Personid = personalinfos[3].Personalinfoid, Datejoined = DateOnly.Parse("2023-04-01"), Status = "Active" },
-                new Member { Personid = personalinfos[4].Personalinfoid, Datejoined = DateOnly.Parse("2023-05-01"), Status = "Active" },
-                new Member { Personid = personalinfos[5].Personalinfoid, Datejoined = DateOnly.Parse("2023-06-01"), Status = "Active" },
-                new Member { Personid = personalinfos[6].Personalinfoid, Datejoined = DateOnly.Parse("2023-07-01"), Status = "Inactive" },
-                new Member { Personid = personalinfos[7].Personalinfoid, Datejoined = DateOnly.Parse("2023-08-01"), Status = "Active" },
-                new Member { Personid = personalinfos[8].Personalinfoid, Datejoined = DateOnly.Parse("2023-09-01"), Status = "Active" },
-                new Member { Personid = personalinfos[9].Personalinfoid, Datejoined = DateOnly.Parse("2023-10-01"), Status = "Active" },
-                new Member { Personid = personalinfos[10].Personalinfoid, Datejoined = DateOnly.Parse("2023-11-01"), Status = "Inactive" },
-                new Member { Personid = personalinfos[11].Personalinfoid, Datejoined = DateOnly.Parse("2023-12-01"), Status = "Active" },
-                new Member { Personid = personalinfos[12].Personalinfoid, Datejoined = DateOnly.Parse("2024-01-01"), Status = "Active" },
-                new Member { Personid = personalinfos[13].Personalinfoid, Datejoined = DateOnly.Parse("2024-02-01"), Status = "Active" },
-                new Member { Personid = personalinfos[14].Personalinfoid, Datejoined = DateOnly.Parse("2024-03-01"), Status = "Inactive" },
-                new Member { Personid = personalinfos[15].Personalinfoid, Datejoined = DateOnly.Parse("2024-04-01"), Status = "Active" },
-                new Member { Personid = personalinfos[16].Personalinfoid, Datejoined = DateOnly.Parse("2024-05-01"), Status = "Active" },
-                new Member { Personid = personalinfos[17].Personalinfoid, Datejoined = DateOnly.Parse("2024-06-01"), Status = "Active" },
-                new Member { Personid = personalinfos[18].Personalinfoid, Datejoined = DateOnly.Parse("2024-07-01"), Status = "Inactive" },
-                new Member { Personid = personalinfos[19].Personalinfoid, Datejoined = DateOnly.Parse("2024-08-01"), Status = "Active" },
-                new Member { Personid = personalinfos[20].Personalinfoid, Datejoined = DateOnly.Parse("2024-09-01"), Status = "Active" },
-                new Member { Personid = personalinfos[21].Personalinfoid, Datejoined = DateOnly.Parse("2024-10-01"), Status = "Active" },
-                new Member { Personid = personalinfos[22].Personalinfoid, Datejoined = DateOnly.Parse("2024-11-01"), Status = "Inactive" },
-                new Member { Personid = personalinfos[23].Personalinfoid, Datejoined = DateOnly.Parse("2024-12-01"), Status = "Active" },
-                new Member { Personid = personalinfos[24].Personalinfoid, Datejoined = DateOnly.Parse("2025-01-01"), Status = "Active" }
-            };
-
-            foreach (Member m in members)
-            {
-                context.Members.Add(m);
-            }
-            context.SaveChanges();
-
-            var trainers = new Trainers[]
-            {
-                new Trainers { Personid = personalinfos[0].Personalinfoid, Trainedfield = "Strength Training", Datehired = DateOnly.Parse("2023-01-01") },
-                new Trainers { Personid = personalinfos[1].Personalinfoid, Trainedfield = "Cardio Fitness", Datehired = DateOnly.Parse("2023-02-01") },
-                new Trainers { Personid = personalinfos[2].Personalinfoid, Trainedfield = "Yoga", Datehired = DateOnly.Parse("2023-03-01") },
-                new Trainers { Personid = personalinfos[3].Personalinfoid, Trainedfield = "Pilates", Datehired = DateOnly.Parse("2023-04-01") },
-                new Trainers { Personid = personalinfos[4].Personalinfoid, Trainedfield = "CrossFit", Datehired = DateOnly.Parse("2023-05-01") }
-            };
-
-            foreach (Trainers t in trainers)
-            {
-                context.Trainers.Add(t);
-            }
-            context.SaveChanges();
+            
 
             var classes = new Classes[]
             {
@@ -116,56 +68,11 @@ namespace One_Pass_Fitness.Data
             }
             context.SaveChanges();
 
-            var bookings = new BookingClasses[]
-            {
-                new BookingClasses { Memberid = members[0].Memberid, Classid = classes[0].ClassesId, Bookingdate = DateOnly.Parse("2023-01-01"), Attendancestatus = "Confirmed" },
-                new BookingClasses { Memberid = members[1].Memberid, Classid = classes[1].ClassesId, Bookingdate = DateOnly.Parse("2023-01-02"), Attendancestatus = "Confirmed" },
-                new BookingClasses { Memberid = members[2].Memberid, Classid = classes[2].ClassesId, Bookingdate = DateOnly.Parse("2023-01-03"), Attendancestatus = "Pending" },
-                new BookingClasses { Memberid = members[3].Memberid, Classid = classes[3].ClassesId, Bookingdate = DateOnly.Parse("2023-01-04"), Attendancestatus = "Confirmed" },
-                new BookingClasses { Memberid = members[4].Memberid, Classid = classes[4].ClassesId, Bookingdate = DateOnly.Parse("2023-01-05"), Attendancestatus = "Cancelled" },
-                new BookingClasses { Memberid = members[5].Memberid, Classid = classes[0].ClassesId, Bookingdate = DateOnly.Parse("2023-01-06"), Attendancestatus = "Confirmed" },
-                new BookingClasses { Memberid = members[6].Memberid, Classid = classes[1].ClassesId, Bookingdate = DateOnly.Parse("2023-01-07"), Attendancestatus = "Pending" },
-                new BookingClasses { Memberid = members[7].Memberid, Classid = classes[2].ClassesId, Bookingdate = DateOnly.Parse("2023-01-08"), Attendancestatus = "Confirmed" },
-                new BookingClasses { Memberid = members[8].Memberid, Classid = classes[3].ClassesId, Bookingdate = DateOnly.Parse("2023-01-09"), Attendancestatus = "Confirmed" },
-                new BookingClasses { Memberid = members[9].Memberid, Classid = classes[4].ClassesId, Bookingdate = DateOnly.Parse("2023-01-10"), Attendancestatus = "Cancelled" },
-                new BookingClasses { Memberid = members[10].Memberid, Classid = classes[0].ClassesId, Bookingdate = DateOnly.Parse("2023-01-11"), Attendancestatus = "Confirmed" },
-                new BookingClasses { Memberid = members[11].Memberid, Classid = classes[1].ClassesId, Bookingdate = DateOnly.Parse("2023-01-12"), Attendancestatus = "Pending" },
-                new BookingClasses { Memberid = members[12].Memberid, Classid = classes[2].ClassesId, Bookingdate = DateOnly.Parse("2023-01-13"), Attendancestatus = "Confirmed" },
-                new BookingClasses { Memberid = members[13].Memberid, Classid = classes[3].ClassesId, Bookingdate = DateOnly.Parse("2023-01-14"), Attendancestatus = "Confirmed" },
-                new BookingClasses { Memberid = members[14].Memberid, Classid = classes[4].ClassesId, Bookingdate = DateOnly.Parse("2023-01-15"), Attendancestatus = "Cancelled" },
-                new BookingClasses { Memberid = members[15].Memberid, Classid = classes[0].ClassesId, Bookingdate = DateOnly.Parse("2023-01-16"), Attendancestatus = "Confirmed" },
-                new BookingClasses { Memberid = members[16].Memberid, Classid = classes[1].ClassesId, Bookingdate = DateOnly.Parse("2023-01-17"), Attendancestatus = "Confirmed" },
-                new BookingClasses { Memberid = members[17].Memberid, Classid = classes[2].ClassesId, Bookingdate = DateOnly.Parse("2023-01-18"), Attendancestatus = "Pending" },
-                new BookingClasses { Memberid = members[18].Memberid, Classid = classes[3].ClassesId, Bookingdate = DateOnly.Parse("2023-01-19"), Attendancestatus = "Confirmed" },
-                new BookingClasses { Memberid = members[19].Memberid, Classid = classes[4].ClassesId, Bookingdate = DateOnly.Parse("2023-01-20"), Attendancestatus = "Cancelled" },
-                new BookingClasses { Memberid = members[20].Memberid, Classid = classes[0].ClassesId, Bookingdate = DateOnly.Parse("2023-01-21"), Attendancestatus = "Confirmed" },
-                new BookingClasses { Memberid = members[21].Memberid, Classid = classes[1].ClassesId, Bookingdate = DateOnly.Parse("2023-01-22"), Attendancestatus = "Pending" },
-                new BookingClasses { Memberid = members[22].Memberid, Classid = classes[2].ClassesId, Bookingdate = DateOnly.Parse("2023-01-23"), Attendancestatus = "Confirmed" },
-                new BookingClasses { Memberid = members[23].Memberid, Classid = classes[3].ClassesId, Bookingdate = DateOnly.Parse("2023-01-24"), Attendancestatus = "Confirmed" },
-                new BookingClasses { Memberid = members[24].Memberid, Classid = classes[4].ClassesId, Bookingdate = DateOnly.Parse("2023-01-25"), Attendancestatus = "Cancelled" }
-            };
-
-            foreach (BookingClasses b in bookings)
-            {
-                context.BookingClasses.Add(b);
-            }
-            context.SaveChanges();
-
-            var manager = new Manager[]
-            {
-                new Manager { Personid = personalinfos[0].Personalinfoid },
-
-            };
-
-            foreach (Manager a in manager)
-            {
-                context.Manager.Add(a);
-            }
-            context.SaveChanges();
+          
 
             var membershipRows = new Membership[]
             {
-                new Membership { Memberid = members[0].Memberid, MembershipType = "Monthly", Startdate = DateOnly.Parse("2023-01-01"), Enddate = DateOnly.Parse("2023-02-01"), Price = 49.99m },
+                new Membership { Membershipid = member[0].Memberid, MembershipType = "Monthly", Startdate = DateOnly.Parse("2023-01-01"), Enddate = DateOnly.Parse("2023-02-01"), Price = 49.99m },
                 new Membership { Memberid = members[1].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2023-02-01"), Enddate = DateOnly.Parse("2024-02-01"), Price = 600m },
                 new Membership { Memberid = members[2].Memberid, MembershipType = "Monthly", Startdate = DateOnly.Parse("2023-03-01"), Enddate = DateOnly.Parse("2024-03-01"), Price = 49.99m },
                 new Membership { Memberid = members[3].Memberid, MembershipType = "Annual", Startdate = DateOnly.Parse("2023-04-01"), Enddate = DateOnly.Parse("2024-04-01"), Price = 49.99m },
