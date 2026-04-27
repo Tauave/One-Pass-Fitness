@@ -17,17 +17,24 @@ namespace One_Pass_Fitness.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Personalinfo>(e =>
+            modelBuilder.Entity<Personalinfo>().ToTable("Personalinfo");
+            modelBuilder.Entity<Roles>().ToTable("Roles");
+
+            modelBuilder.Entity<Users>(e =>
             {
-                e.ToTable("Personalinfo");
+                e.ToTable("Users");
+                e.HasOne(u => u.Person)
+                    .WithMany()
+                    .HasForeignKey(u => u.Personid)
+                    .OnDelete(DeleteBehavior.Restrict);
             });
 
-            modelBuilder.Entity<Roles>(e =>
+            modelBuilder.Entity<Classes>(e =>
             {
-                e.ToTable("Members");
-                e.HasOne(m => m.Role)
-                    .WithMany(p => p.Roles)
-                    .HasForeignKey(m => m.Personid)
+                e.ToTable("Classes");
+                e.HasOne(c => c.Role)
+                    .WithMany()
+                    .HasForeignKey(c => c.RoleId)
                     .OnDelete(DeleteBehavior.Restrict);
             });
 
@@ -36,49 +43,9 @@ namespace One_Pass_Fitness.Data
                 e.ToTable("Membership");
                 e.Property(m => m.MembershipType).HasMaxLength(100);
                 e.Property(m => m.Price).HasPrecision(18, 2);
-                e.HasOne(m => m.Member)
-                    .WithMany(m => m.Memberships)
-                    .HasForeignKey(m => m.Memberid)
-                    .OnDelete(DeleteBehavior.Cascade);
-            });
-
-            modelBuilder.Entity<Trainers>(e =>
-            {
-                e.ToTable("Trainers");
-                e.HasOne(t => t.Person)
-                    .WithMany(p => p.Trainers)
-                    .HasForeignKey(t => t.Personid)
-                    .OnDelete(DeleteBehavior.Restrict);
-            });
-
-            modelBuilder.Entity<Manager>(e =>
-            {
-                e.ToTable("Manager");
-                e.HasOne(m => m.Person)
-                    .WithMany(p => p.Managers)
-                    .HasForeignKey(m => m.Personid)
-                    .OnDelete(DeleteBehavior.Restrict);
-            });
-
-            modelBuilder.Entity<Classes>(e =>
-            {
-                e.ToTable("Classes");
-                e.HasOne(c => c.Trainer)
-                    .WithMany(t => t.Classes)
-                    .HasForeignKey(c => c.Trainerid)
-                    .OnDelete(DeleteBehavior.Restrict);
-            });
-
-            modelBuilder.Entity<BookingClasses>(e =>
-            {
-                e.ToTable("BookingClasses");
-                e.HasOne(b => b.Member)
+                e.HasOne(m => m.Roles)
                     .WithMany()
-                    .HasForeignKey(b => b.Memberid)
-                    .OnDelete(DeleteBehavior.Restrict);
-                e.HasOne(b => b.Class)
-                    .WithMany(c => c.Bookings)
-                    .HasForeignKey(b => b.Classid)
+                    .HasForeignKey(m => m.Roleid)
                     .OnDelete(DeleteBehavior.Restrict);
             });
         }
