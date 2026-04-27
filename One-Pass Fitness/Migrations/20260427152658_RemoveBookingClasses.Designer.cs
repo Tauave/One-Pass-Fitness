@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using One_Pass_Fitness.Data;
 
@@ -11,9 +12,11 @@ using One_Pass_Fitness.Data;
 namespace One_Pass_Fitness.Migrations
 {
     [DbContext(typeof(OnePassFitnessContext))]
-    partial class OnePassFitnessContextModelSnapshot : ModelSnapshot
+    [Migration("20260427152658_RemoveBookingClasses")]
+    partial class RemoveBookingClasses
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -158,9 +161,6 @@ namespace One_Pass_Fitness.Migrations
                     b.Property<int>("Personid")
                         .HasColumnType("int");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -168,8 +168,6 @@ namespace One_Pass_Fitness.Migrations
                     b.HasKey("Usersid");
 
                     b.HasIndex("Personid");
-
-                    b.HasIndex("RoleId");
 
                     b.ToTable("Users", (string)null);
                 });
@@ -204,15 +202,7 @@ namespace One_Pass_Fitness.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("One_Pass_Fitness.Models.Roles", "Role")
-                        .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.Navigation("Person");
-
-                    b.Navigation("Role");
                 });
 #pragma warning restore 612, 618
         }

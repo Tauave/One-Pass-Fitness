@@ -15,10 +15,9 @@ namespace One_Pass_Fitness.Models
         public DateOnly Date { get; set; }
         public TimeOnly Starttime { get; set; }
         public TimeOnly Endtime { get; set; }
-        public int RoleId { get; set; }
+        public int UserId { get; set; }
         public string? Availability { get; set; }
 
-        public Roles Role { get; set; } = null!;
-        //public ICollection<BookingClasses> Bookings { get; set; } = new List<BookingClasses>();
+        public Users User { get; set; } 
     }
 }

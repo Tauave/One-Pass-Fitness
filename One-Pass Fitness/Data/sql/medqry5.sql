@@ -1,3 +1,3 @@
 SELECT *
-FROM BookingClasses
-ORDER BY BookingClassesId ASC;
+FROM Classes
+ORDER BY ClassesId ASC;

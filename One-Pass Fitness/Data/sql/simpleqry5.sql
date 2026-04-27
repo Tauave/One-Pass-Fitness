@@ -1,2 +1,2 @@
-SELECT * 
-FROM BookingClasses;
+SELECT *
+FROM Classes;

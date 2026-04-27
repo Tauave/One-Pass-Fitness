@@ -41,7 +41,7 @@ namespace One_Pass_Fitness.Models
         [StringLength(70)]
         [Required(ErrorMessage = "Please enter your phonenumber")]
         public string Phone { get; set; }
+        public Users User { get; set; } 
 
-       
     }
 }

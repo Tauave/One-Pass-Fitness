@@ -2,7 +2,10 @@
 {
     public class Roles
     {
-        public int Rolesid { get; set; }
+        public int Roleid { get; set; }
+
         public string Role { get; set; } = null!;
+
+        public ICollection<Users> Users { get; set; } = new List<Users>();
     }
 }
