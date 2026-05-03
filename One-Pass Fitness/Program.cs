@@ -30,7 +30,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.UseStaticFiles(); // <-- use this instead of MapStaticAssets unless you have a custom extension
+app.UseStaticFiles(); 
 
 app.MapControllerRoute(
     name: "default",
