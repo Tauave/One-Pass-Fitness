@@ -19,6 +19,7 @@ namespace One_Pass_Fitness.Data
         {
             modelBuilder.Entity<Personalinfo>().ToTable("Personalinfo");
             modelBuilder.Entity<Roles>().ToTable("Roles");
+            modelBuilder.Entity<Roles>().HasKey(r => r.Roleid);
 
             modelBuilder.Entity<Users>(e =>
             {
@@ -36,20 +37,19 @@ namespace One_Pass_Fitness.Data
             modelBuilder.Entity<Classes>(e =>
             {
                 e.ToTable("Classes");
-                e.HasOne(c => c.Role)
-                    .WithMany()
-                    .HasForeignKey(c => c.RoleId)
+                e.HasOne(c => c.User)
+                    .WithMany(u => u.Classes)
+                    .HasForeignKey(c => c.UserId)
                     .OnDelete(DeleteBehavior.Restrict);
             });
 
             modelBuilder.Entity<Membership>(e =>
             {
                 e.ToTable("Membership");
-                e.Property(m => m.MembershipType).HasMaxLength(100);
                 e.Property(m => m.Price).HasPrecision(18, 2);
-                e.HasOne(m => m.Roles)
-                    .WithMany()
-                    .HasForeignKey(m => m.Roleid)
+                e.HasOne(m => m.User)
+                    .WithMany(u => u.Memberships)
+                    .HasForeignKey(m => m.Userid)
                     .OnDelete(DeleteBehavior.Restrict);
             });
         }

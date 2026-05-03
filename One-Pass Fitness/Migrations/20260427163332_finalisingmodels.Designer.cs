@@ -1,8 +1,8 @@
-﻿
-using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using One_Pass_Fitness.Data;
 
@@ -11,9 +11,11 @@ using One_Pass_Fitness.Data;
 namespace One_Pass_Fitness.Migrations
 {
     [DbContext(typeof(OnePassFitnessContext))]
-    partial class OnePassFitnessContextModelSnapshot : ModelSnapshot
+    [Migration("20260427163332_finalisingmodels")]
+    partial class finalisingmodels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
