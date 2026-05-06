@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using One_Pass_Fitness.Data;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace One_Pass_Fitness.Models

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using One_Pass_Fitness.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;

@@ -1,3 +1,5 @@
+using One_Pass_Fitness.Data;
+
 namespace One_Pass_Fitness.Models
 {
     public class Membership
