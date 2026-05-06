@@ -18,30 +18,17 @@ namespace One_Pass_Fitness.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Personalinfo>().ToTable("Personalinfo");
-            //    modelBuilder.Entity<Roles>(e =>
-            //    {
-            //        e.ToTable("Roles");
-            //        e.HasKey(r => r.Roleid);
-            //        e.HasMany(r => r.Users)
-            //            .WithOne(u => u.Role)
-            //            .HasForeignKey(u => u.RoleId)
-            //            .OnDelete(DeleteBehavior.Restrict);
-
-            //    });
 
 
-            //    modelBuilder.Entity<Users>(e =>
-            //    {
-            //        e.ToTable("Users");
-            //        e.HasOne(u => u.Person)
-            //            .WithMany()
-            //            .HasForeignKey(u => u.Personid)
-            //            .OnDelete(DeleteBehavior.Restrict);
-            //        e.HasOne(u => u.Role)
-            //            .WithMany()
-            //            .HasForeignKey(u => u.RoleId)
-            //            .OnDelete(DeleteBehavior.Restrict);
-            //    });
+
+            modelBuilder.Entity<Users>(e =>
+            {
+                e.ToTable("Users");
+                e.HasOne(u => u.Person)
+                    .WithMany()
+                    .HasForeignKey(u => u.Personid)
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
 
             modelBuilder.Entity<Classes>(e =>
             {

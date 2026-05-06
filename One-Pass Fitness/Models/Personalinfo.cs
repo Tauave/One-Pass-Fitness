@@ -7,6 +7,7 @@ namespace One_Pass_Fitness.Models
 
     public class Personalinfo
     {
+        
         public int Personalinfoid { get; set; }
 
         //A name is required and should not exceed 30 characters in length. The error message "Please enter your name" will be displayed if the validation fails.
