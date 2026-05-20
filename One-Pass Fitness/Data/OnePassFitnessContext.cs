@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace One_Pass_Fitness.Data
 {
-    public class OnePassFitnessContext : IdentityDbContext<Users>
+    public class OnePassFitnessContext : IdentityDbContext
     {
         public OnePassFitnessContext(DbContextOptions<OnePassFitnessContext> options) : base(options)
         {
@@ -18,40 +18,26 @@ namespace One_Pass_Fitness.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Personalinfo>().ToTable("Personalinfo");
-            modelBuilder.Entity<Roles>().ToTable("Roles");
-
-<<<<<<< HEAD
-=======
-            modelBuilder.Entity<Users>(e =>
+            modelBuilder.Entity<Classes>().ToTable("Classes");
             {
-                e.ToTable("Users");
-                e.HasOne(u => u.Person)
+                modelBuilder.Entity<Classes>()
+                    .HasOne(c => c.Personalinfo)
                     .WithMany()
-                    .HasForeignKey(u => u.Personid)
+                    .HasForeignKey(c => c.ClassesId)
                     .OnDelete(DeleteBehavior.Restrict);
-            });
-
->>>>>>> 1f00c30cdd6d1715891b7c8482f56cc2a5f631e5
-            modelBuilder.Entity<Classes>(e =>
+            }
+            modelBuilder.Entity<Membership>().ToTable("Membership");
             {
-                e.ToTable("Classes");
-                e.ToTable(  
-                e.HasOne(c => c.Role)
+                modelBuilder.Entity<Membership>()
+                    .HasOne(m => m.Personalinfo)
                     .WithMany()
-                    .HasForeignKey(c => c.RoleId)
+                    .HasForeignKey(m => m.Personalinfo)
                     .OnDelete(DeleteBehavior.Restrict);
-            });
+            }
+            base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Membership>(e =>
-            {
-                e.ToTable("Membership");
-                e.Property(m => m.MembershipType).HasMaxLength(100);
-                e.Property(m => m.Price).HasPrecision(18, 2);
-                e.HasOne(m => m.Roles)
-                    .WithMany()
-                    .HasForeignKey(m => m.Roleid)
-                    .OnDelete(DeleteBehavior.Restrict);
-            });
+
+
 
 
         }
