@@ -1,16 +1,16 @@
 ﻿using One_Pass_Fitness.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace One_Pass_Fitness.Data
 {
-    public class OnePassFitnessContext : DbContext
+    public class OnePassFitnessContext : IdentityDbContext<Users>
     {
         public OnePassFitnessContext(DbContextOptions<OnePassFitnessContext> options) : base(options)
         {
         }
 
-        public DbSet <Users> Users { get; set; }
-        public DbSet<Roles> Roles { get; set; }
+       
         public DbSet<Classes> Classes { get; set; }
         public DbSet<Membership> Memberships { get; set; }
         public DbSet<Personalinfo> Personalinfo { get; set; }
@@ -26,10 +26,6 @@ namespace One_Pass_Fitness.Data
                 e.HasOne(u => u.Person)
                     .WithMany()
                     .HasForeignKey(u => u.Personid)
-                    .OnDelete(DeleteBehavior.Restrict);
-                e.HasOne(u => u.Role)
-                    .WithMany()
-                    .HasForeignKey(u => u.RoleId)
                     .OnDelete(DeleteBehavior.Restrict);
             });
 
@@ -52,6 +48,8 @@ namespace One_Pass_Fitness.Data
                     .HasForeignKey(m => m.Roleid)
                     .OnDelete(DeleteBehavior.Restrict);
             });
+
+
         }
     }
 }
