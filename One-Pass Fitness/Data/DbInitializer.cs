@@ -10,20 +10,6 @@ namespace One_Pass_Fitness.Data
         {
             context.Database.EnsureCreated();
 
-            if (context.Roles.Any())
-            {
-                return;
-            }
-
-            var roles = new Roles[]
-            {
-                new Roles { Role = "Admin" },
-                new Roles { Role = "Trainer" },
-                new Roles { Role = "Member" }
-            };
-
-            context.Roles.AddRange(roles);
-            context.SaveChanges();
 
             var personalInfos = new Personalinfo[]
             {
@@ -37,17 +23,6 @@ namespace One_Pass_Fitness.Data
             context.Personalinfo.AddRange(personalInfos);
             context.SaveChanges();
 
-            var users = new Users[]
-            {
-                new Users { Personid = personalInfos[0].Personalinfoid, RoleId = roles[0].Roleid, Username = "john.doe", Password = "P@ssword1" },
-                new Users { Personid = personalInfos[1].Personalinfoid, RoleId = roles[1].Roleid, Username = "jane.smith", Password = "P@ssword1" },
-                new Users { Personid = personalInfos[2].Personalinfoid, RoleId = roles[1].Roleid, Username = "michael.brown", Password = "P@ssword1" },
-                new Users { Personid = personalInfos[3].Personalinfoid, RoleId = roles[2].Roleid, Username = "olivia.wilson", Password = "P@ssword1" },
-                new Users { Personid = personalInfos[4].Personalinfoid, RoleId = roles[2].Roleid, Username = "liam.taylor", Password = "P@ssword1" }
-            };
-
-            context.Users.AddRange(users);
-            context.SaveChanges();
 
             var classes = new Classes[]
             {
@@ -61,8 +36,8 @@ namespace One_Pass_Fitness.Data
 
             var memberships = new Membership[]
             {
-                new Membership { Userid = users[3].Usersid, Startdate = DateOnly.Parse("2026-05-01"), Enddate = DateOnly.Parse("2026-06-01"), Price = 49.99m },
-                new Membership { Userid = users[4].Usersid, Startdate = DateOnly.Parse("2026-05-01"), Enddate = DateOnly.Parse("2027-05-01"), Price = 499.99m }
+                new Membership { Personalinfoid = personalInfos.Personalinfoid, Startdate = DateOnly.Parse("2026-05-01"), Enddate = DateOnly.Parse("2026-06-01"), Price = 49.99m },
+                new Membership { Personalinfoid = personalInfos.Personalinfoid, Startdate = DateOnly.Parse("2026-05-01"), Enddate = DateOnly.Parse("2027-05-01"), Price = 499.99m }
             };
 
             context.Membership.AddRange(memberships);

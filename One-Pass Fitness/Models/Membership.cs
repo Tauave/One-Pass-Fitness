@@ -11,6 +11,6 @@ namespace One_Pass_Fitness.Models
 
         public decimal Price { get; set; }
 
-        public Users User { get; set; } = null!;
+        public Personalinfo Personalinfoid { get; set; }
     }
 }
