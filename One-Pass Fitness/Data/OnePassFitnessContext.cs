@@ -26,6 +26,7 @@ namespace One_Pass_Fitness.Data
                     .HasForeignKey(c => c.ClassesId)
                     .OnDelete(DeleteBehavior.Restrict);
             }
+
             modelBuilder.Entity<Membership>().ToTable("Membership");
             {
                 modelBuilder.Entity<Membership>()
@@ -34,6 +35,8 @@ namespace One_Pass_Fitness.Data
                     .HasForeignKey(m => m.Personalinfo)
                     .OnDelete(DeleteBehavior.Restrict);
             }
+            
+            modelBuilder.Entity<Users>
             base.OnModelCreating(modelBuilder);
 
 
