@@ -8,8 +8,26 @@ namespace One_Pass_Fitness.Data
     {
         public static void Initialize(OnePassFitnessContext context)
         {
-            context.Database.EnsureCreated();
+            //context.Database.EnsureCreated();
 
+<<<<<<< HEAD
+=======
+            //if (context.Roles.Any())
+            //{
+            //    return;
+            //}
+
+
+            //var roles = new Roles[]
+            //{
+            //    new Roles { Role = "Admin" },
+            //    new Roles { Role = "Trainer" },
+            //    new Roles { Role = "Member" }
+            //};
+
+            //context.Roles.AddRange(roles);
+            //context.SaveChanges();
+>>>>>>> 1f00c30cdd6d1715891b7c8482f56cc2a5f631e5
 
             var personalInfos = new Personalinfo[]
             {
@@ -23,6 +41,20 @@ namespace One_Pass_Fitness.Data
             context.Personalinfo.AddRange(personalInfos);
             context.SaveChanges();
 
+<<<<<<< HEAD
+=======
+            var users = new Users[]
+            {
+                new Users { Personid = personalInfos[0].Personalinfoid, /*RoleId = roles[0].Roleid,*/ Username = "john.doe", Password = "P@ssword1" },
+                new Users { Personid = personalInfos[1].Personalinfoid, /*RoleId = roles[1].Roleid,*/ Username = "jane.smith", Password = "P@ssword2" },
+                new Users { Personid = personalInfos[2].Personalinfoid, /*RoleId = roles[1].Roleid,*/ Username = "michael.brown", Password = "P@ssword3" },
+                new Users { Personid = personalInfos[3].Personalinfoid, /*RoleId = roles[2].Roleid,*/ Username = "olivia.wilson", Password = "P@ssword4" },
+                new Users { Personid = personalInfos[4].Personalinfoid, /*RoleId = roles[2].Roleid,*/ Username = "liam.taylor", Password = "P@ssword5" }
+            };
+
+            context.Users.AddRange(users);
+            context.SaveChanges();
+>>>>>>> 1f00c30cdd6d1715891b7c8482f56cc2a5f631e5
 
             var classes = new Classes[]
             {
