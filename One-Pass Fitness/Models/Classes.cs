@@ -43,7 +43,6 @@ namespace One_Pass_Fitness.Models
         [Required(ErrorMessage = "Please enter an availability status for the class")]
         public string? Availability { get; set; }
 
-        //public ICollection<Users> Users { get; set; } = new List<Users>();
         public Users User { get; set; } 
     }
 }
