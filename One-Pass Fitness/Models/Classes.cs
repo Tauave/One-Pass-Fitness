@@ -16,9 +16,7 @@ namespace One_Pass_Fitness.Models
         public DateOnly Date { get; set; }
         public TimeOnly Starttime { get; set; }
         public TimeOnly Endtime { get; set; }
-        public int UserId { get; set; }
         public string? Availability { get; set; }
-
         public Personalinfo Personalinfo { get; set; }
     }
 }

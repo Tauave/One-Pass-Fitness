@@ -10,8 +10,6 @@ namespace One_Pass_Fitness.Data
         {
             //context.Database.EnsureCreated();
 
-<<<<<<< HEAD
-=======
             //if (context.Roles.Any())
             //{
             //    return;
@@ -27,7 +25,6 @@ namespace One_Pass_Fitness.Data
 
             //context.Roles.AddRange(roles);
             //context.SaveChanges();
->>>>>>> 1f00c30cdd6d1715891b7c8482f56cc2a5f631e5
 
             var personalInfos = new Personalinfo[]
             {
@@ -41,26 +38,11 @@ namespace One_Pass_Fitness.Data
             context.Personalinfo.AddRange(personalInfos);
             context.SaveChanges();
 
-<<<<<<< HEAD
-=======
-            var users = new Users[]
-            {
-                new Users { Personid = personalInfos[0].Personalinfoid, /*RoleId = roles[0].Roleid,*/ Username = "john.doe", Password = "P@ssword1" },
-                new Users { Personid = personalInfos[1].Personalinfoid, /*RoleId = roles[1].Roleid,*/ Username = "jane.smith", Password = "P@ssword2" },
-                new Users { Personid = personalInfos[2].Personalinfoid, /*RoleId = roles[1].Roleid,*/ Username = "michael.brown", Password = "P@ssword3" },
-                new Users { Personid = personalInfos[3].Personalinfoid, /*RoleId = roles[2].Roleid,*/ Username = "olivia.wilson", Password = "P@ssword4" },
-                new Users { Personid = personalInfos[4].Personalinfoid, /*RoleId = roles[2].Roleid,*/ Username = "liam.taylor", Password = "P@ssword5" }
-            };
-
-            context.Users.AddRange(users);
-            context.SaveChanges();
->>>>>>> 1f00c30cdd6d1715891b7c8482f56cc2a5f631e5
-
             var classes = new Classes[]
             {
-                new Classes { Classname = "Yoga", Date = DateOnly.Parse("2026-05-01"), Starttime = TimeOnly.Parse("09:00"), Endtime = TimeOnly.Parse("10:00"), Userid = users[1].Usersid, Availability = "Open" },
-                new Classes { Classname = "HIIT", Date = DateOnly.Parse("2026-05-02"), Starttime = TimeOnly.Parse("18:00"), Endtime = TimeOnly.Parse("19:00"), Userid = users[2].Usersid, Availability = "Open" },
-                new Classes { Classname = "Pilates", Date = DateOnly.Parse("2026-05-03"), Starttime = TimeOnly.Parse("11:00"), Endtime = TimeOnly.Parse("12:00"), Userid = users[1].Usersid, Availability = "Full" }
+                new Classes { Classname = "Yoga", Date = DateOnly.Parse("2026-05-01"), Starttime = TimeOnly.Parse("09:00"), Endtime = TimeOnly.Parse("10:00"), Availability = "Open" },
+                new Classes { Classname = "HIIT", Date = DateOnly.Parse("2026-05-02"), Starttime = TimeOnly.Parse("18:00"), Endtime = TimeOnly.Parse("19:00"), Availability = "Open" },
+                new Classes { Classname = "Pilates", Date = DateOnly.Parse("2026-05-03"), Starttime = TimeOnly.Parse("11:00"), Endtime = TimeOnly.Parse("12:00"), Availability = "Full" }
             };
 
             context.Classes.AddRange(classes);
@@ -68,11 +50,11 @@ namespace One_Pass_Fitness.Data
 
             var memberships = new Membership[]
             {
-                new Membership { Personalinfoid = personalInfos.Personalinfoid, Startdate = DateOnly.Parse("2026-05-01"), Enddate = DateOnly.Parse("2026-06-01"), Price = 49.99m },
-                new Membership { Personalinfoid = personalInfos.Personalinfoid, Startdate = DateOnly.Parse("2026-05-01"), Enddate = DateOnly.Parse("2027-05-01"), Price = 499.99m }
+                new Membership { Personalinfoid = personalInfos[0].Personalinfoid, Startdate = DateOnly.Parse("2026-05-01"), Enddate = DateOnly.Parse("2026-06-01") },
+                new Membership { Personalinfoid = personalInfos[1].Personalinfoid, Startdate = DateOnly.Parse("2026-05-01"), Enddate = DateOnly.Parse("2027-05-01") }
             };
 
-            context.Membership.AddRange(memberships);
+            context.Memberships.AddRange(memberships);
             context.SaveChanges();
         }
     }
