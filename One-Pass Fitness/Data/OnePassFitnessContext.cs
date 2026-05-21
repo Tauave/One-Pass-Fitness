@@ -36,8 +36,7 @@ namespace One_Pass_Fitness.Data
                     .OnDelete(DeleteBehavior.Restrict);
             }
             
-            modelBuilder.Entity<Users>
-            base.OnModelCreating(modelBuilder);
+         
 
 
 
