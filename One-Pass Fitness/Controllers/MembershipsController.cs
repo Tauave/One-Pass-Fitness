@@ -65,7 +65,7 @@ namespace One_Pass_Fitness.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Userid"] = new SelectList(_context.Users, "Usersid", "Usersid", membership.Userid);
+            ViewData["Userid"] = new SelectList(_context.Users, "Usersid", "Usersid", membership.User);
             return View(membership);
         }
 
@@ -82,7 +82,7 @@ namespace One_Pass_Fitness.Controllers
             {
                 return NotFound();
             }
-            ViewData["Userid"] = new SelectList(_context.Users, "Usersid", "Usersid", membership.Userid);
+            ViewData["Userid"] = new SelectList(_context.Users, "Usersid", "Usersid", membership.User);
             return View(membership);
         }
 
@@ -118,7 +118,7 @@ namespace One_Pass_Fitness.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Userid"] = new SelectList(_context.Users, "Usersid", "Usersid", membership.Userid);
+            ViewData["Userid"] = new SelectList(_context.Users, "Usersid", "Usersid", membership.User);
             return View(membership);
         }
 

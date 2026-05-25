@@ -1,4 +1,7 @@
 ﻿using One_Pass_Fitness.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace One_Pass_Fitness.Data
 {
@@ -9,5 +12,6 @@ namespace One_Pass_Fitness.Data
         public int Password { get; set; }
 
         public Membership Membership { get; set; }
+        //public string? Id { get; internal set; }
     }
 }

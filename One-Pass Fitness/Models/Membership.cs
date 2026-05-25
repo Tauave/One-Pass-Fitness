@@ -10,5 +10,6 @@ namespace One_Pass_Fitness.Models
         public DateOnly Enddate { get; set; }
 
         public Personalinfo Personalinfo { get; set; }
+        public object User { get; internal set; }
     }
 }

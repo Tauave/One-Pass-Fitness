@@ -19,9 +19,6 @@
                 @Html.DisplayNameFor(model => model.Enddate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.User)
             </th>
             <th></th>
@@ -37,10 +34,7 @@
                 @Html.DisplayFor(modelItem => item.Enddate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Usersid)
+                @Html.DisplayFor(modelItem => item.User)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Membershipid">Edit</a> |
