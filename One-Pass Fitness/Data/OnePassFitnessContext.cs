@@ -17,7 +17,7 @@ namespace One_Pass_Fitness.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Personalinfo>().ToTable("Personalinfo");
+            //modelBuilder.Entity<Personalinfo>().ToTable("Personalinfo");
             modelBuilder.Entity<Classes>().ToTable("Classes");
             {
                 modelBuilder.Entity<Classes>()
@@ -30,13 +30,12 @@ namespace One_Pass_Fitness.Data
             modelBuilder.Entity<Membership>().ToTable("Membership");
             {
                 modelBuilder.Entity<Membership>()
-                    .HasOne(m => m.Personalinfo)
-                    .WithMany()
-                    .HasForeignKey(m => m.Personalinfo)
-                    .OnDelete(DeleteBehavior.Restrict);
+               .HasOne(m => m.Personalinfo)
+               .WithMany()
+               .HasForeignKey(m => m.Personalinfoid)
+               .OnDelete(DeleteBehavior.Restrict);
             }
-            
-         
+
 
 
 

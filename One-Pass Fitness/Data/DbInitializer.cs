@@ -50,8 +50,8 @@ namespace One_Pass_Fitness.Data
 
             var memberships = new Membership[]
             {
-                new Membership { Personalinfo = personalInfos[0], Startdate = DateOnly.Parse("2026-05-01"), Enddate = DateOnly.Parse("2026-06-01") },
-                new Membership { Personalinfo = personalInfos[1], Startdate = DateOnly.Parse("2026-05-01"), Enddate = DateOnly.Parse("2027-05-01") }
+                new Membership { Personalinfoid = personalInfos[0].Personalinfoid, Startdate = DateOnly.Parse("2026-05-01"), Enddate = DateOnly.Parse("2026-06-01") },
+                new Membership { Personalinfoid = personalInfos[1].Personalinfoid, Startdate = DateOnly.Parse("2026-05-01"), Enddate = DateOnly.Parse("2027-05-01") }
             };
 
             context.Memberships.AddRange(memberships);

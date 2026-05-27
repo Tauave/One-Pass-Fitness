@@ -5,7 +5,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace One_Pass_Fitness.Data
 {
-    public class Users
+    public class Users:IdentityUser
+
     {
         public int Userid { get; set; }
         public string Username { get; set; }

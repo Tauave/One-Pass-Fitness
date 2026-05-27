@@ -10,7 +10,7 @@ builder.Services.AddDbContext<OnePassFitnessContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddDefaultIdentity<Users>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<OnePassFitnessContext>();
-
+// Add services to the container.
 builder.Services.AddControllersWithViews();
 
 
