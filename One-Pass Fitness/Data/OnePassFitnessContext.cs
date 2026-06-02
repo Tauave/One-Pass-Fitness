@@ -30,10 +30,10 @@ namespace One_Pass_Fitness.Data
             modelBuilder.Entity<Membership>().ToTable("Membership");
             {
                 modelBuilder.Entity<Membership>()
-               .HasOne(m => m.Personalinfoid)
-               .WithMany()
-               .HasForeignKey(m => m.Personalinfoid)
-               .OnDelete(DeleteBehavior.Restrict);
+                    .HasOne(m => m.Personalinfo)
+                    .WithMany()
+                    .HasForeignKey(m => m.Personalinfoid)
+                    .OnDelete(DeleteBehavior.Restrict);
             }
 
 
